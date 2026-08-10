@@ -1,0 +1,402 @@
+.shell{
+  min-height:100vh;
+  display:grid;
+  grid-template-columns:250px 1fr;
+  background:#f4f7fb;
+  color:#0f172a;
+  font-family:system-ui,-apple-system,"Noto Sans KR",sans-serif;
+}
+
+.sidebar{
+  min-height:100vh;
+  padding:24px 18px;
+  display:flex;
+  flex-direction:column;
+  background:linear-gradient(180deg,#071b36,#0b2a52);
+  color:#fff;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:4px 7px 24px;
+  border-bottom:1px solid rgba(255,255,255,.12);
+}
+
+.logoMark{
+  width:46px;
+  height:46px;
+  display:grid;
+  place-items:center;
+  border:2px solid rgba(255,255,255,.85);
+  border-radius:50%;
+  font-size:16px;
+  font-weight:900;
+}
+
+.brand div{
+  display:flex;
+  flex-direction:column;
+}
+
+.brand b{
+  font-size:17px;
+}
+
+.brand small{
+  margin-top:4px;
+  color:#9fb2c9;
+  font-size:10px;
+}
+
+.menu{
+  display:flex;
+  flex-direction:column;
+  gap:7px;
+  padding:24px 0;
+}
+
+.menu a{
+  padding:12px 14px;
+  border-radius:9px;
+  color:#e8eef7;
+  font-size:13px;
+  font-weight:800;
+  text-decoration:none;
+  transition:.2s;
+}
+
+.menu a:hover{
+  background:rgba(255,255,255,.10);
+  color:#fff;
+  transform:translateX(3px);
+}
+
+.sideInfo{
+  margin-top:auto;
+  padding:15px;
+  border:1px solid rgba(255,255,255,.13);
+  border-radius:10px;
+  background:rgba(255,255,255,.05);
+}
+
+.sideInfo span{
+  display:block;
+  color:#9fb2c9;
+  font-size:10px;
+}
+
+.sideInfo b{
+  display:block;
+  margin-top:4px;
+  font-size:14px;
+}
+
+.content{
+  padding:36px 42px 60px;
+  overflow:auto;
+}
+
+.head{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:20px;
+  margin-bottom:26px;
+}
+
+.eyebrow{
+  color:#2563eb;
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:1.2px;
+}
+
+.head h1{
+  margin:5px 0 6px;
+  font-size:34px;
+  letter-spacing:-1.4px;
+}
+
+.head p{
+  margin:0;
+  color:#667085;
+  font-size:13px;
+}
+
+.homeButton{
+  padding:10px 15px;
+  border:1px solid #cfd9e7;
+  border-radius:8px;
+  background:#fff;
+  color:#1d4ed8;
+  font-size:12px;
+  font-weight:900;
+  text-decoration:none;
+}
+
+.stats{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:18px;
+}
+
+.statCard{
+  min-height:150px;
+  padding:22px;
+  display:flex;
+  align-items:center;
+  gap:18px;
+  border:1px solid #dfe7f1;
+  border-radius:15px;
+  background:#fff;
+  box-shadow:0 12px 28px rgba(31,65,105,.08);
+  text-decoration:none;
+  color:inherit;
+  transition:.2s;
+}
+
+.statCard:hover{
+  transform:translateY(-5px);
+  box-shadow:0 20px 38px rgba(31,65,105,.14);
+}
+
+.statIcon{
+  width:52px;
+  height:52px;
+  flex:none;
+  display:grid;
+  place-items:center;
+  border-radius:13px;
+  background:#eef4ff;
+  color:#1d5ed8;
+  font-size:22px;
+  font-weight:900;
+}
+
+.statCard div{
+  display:flex;
+  flex-direction:column;
+}
+
+.statCard small{
+  color:#667085;
+  font-size:11px;
+  font-weight:700;
+}
+
+.statCard strong{
+  margin:3px 0;
+  font-size:36px;
+  line-height:1;
+}
+
+.statCard em{
+  color:#475467;
+  font-size:10px;
+  font-style:normal;
+}
+
+.newCard .statIcon{
+  background:#e8f7ed;
+  color:#178847;
+}
+
+.newCard strong{
+  color:#178847;
+}
+
+.quick{
+  margin-top:34px;
+}
+
+.quick h2{
+  margin:0 0 14px;
+  font-size:20px;
+}
+
+.quickGrid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:16px;
+}
+
+.quickGrid a{
+  min-height:130px;
+  padding:20px;
+  display:flex;
+  flex-direction:column;
+  border:1px solid #dfe7f1;
+  border-radius:13px;
+  background:#fff;
+  color:inherit;
+  text-decoration:none;
+}
+
+.quickGrid b{
+  font-size:15px;
+}
+
+.quickGrid span{
+  margin-top:7px;
+  color:#667085;
+  font-size:11px;
+  line-height:1.6;
+}
+
+.quickGrid em{
+  margin-top:auto;
+  padding-top:12px;
+  color:#1d5ed8;
+  font-size:11px;
+  font-weight:900;
+  font-style:normal;
+}
+
+/* 기존 상품/예약 관리자 화면도 읽기 쉽게 */
+.content :global(h1){
+  font-size:30px;
+  margin:0 0 24px;
+}
+
+.content :global(.admin-list){
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+.content :global(.admin-row){
+  display:grid;
+  grid-template-columns:1.35fr repeat(3,1fr) .65fr .55fr;
+  gap:12px;
+  align-items:end;
+  padding:16px;
+  background:#fff;
+  border:1px solid #dfe7f1;
+  border-radius:12px;
+}
+
+.content :global(.admin-row label){
+  display:flex;
+  flex-direction:column;
+  gap:5px;
+  font-size:10px;
+  color:#475467;
+}
+
+.content :global(.admin-row input),
+.content :global(.admin-row select){
+  min-height:38px;
+  padding:8px;
+  border:1px solid #cfd8e6;
+  border-radius:7px;
+}
+
+.content :global(.admin-row .check){
+  flex-direction:row;
+  align-items:center;
+  padding-bottom:10px;
+}
+
+.content :global(.admin-row .check input){
+  min-height:auto;
+}
+
+.content :global(.admin-row button){
+  height:38px;
+  border:0;
+  border-radius:7px;
+  background:#1d5ed8;
+  color:#fff;
+  font-weight:900;
+}
+
+.content :global(.table-wrap){
+  overflow:auto;
+  border:1px solid #dfe7f1;
+  border-radius:12px;
+  background:#fff;
+}
+
+.content :global(table){
+  width:100%;
+  border-collapse:collapse;
+  font-size:11px;
+}
+
+.content :global(th),
+.content :global(td){
+  padding:12px 10px;
+  border-bottom:1px solid #edf1f6;
+  text-align:left;
+  white-space:nowrap;
+}
+
+.content :global(th){
+  background:#f6f8fb;
+  color:#475467;
+}
+
+.content :global(td form){
+  display:flex;
+  gap:5px;
+}
+
+.content :global(td select){
+  padding:6px;
+  border:1px solid #cfd8e6;
+  border-radius:6px;
+}
+
+.content :global(td button){
+  padding:6px 9px;
+  border:0;
+  border-radius:6px;
+  background:#1d5ed8;
+  color:#fff;
+  font-weight:800;
+}
+
+@media(max-width:900px){
+  .shell{
+    grid-template-columns:1fr;
+  }
+
+  .sidebar{
+    min-height:auto;
+    padding:14px;
+  }
+
+  .menu{
+    flex-direction:row;
+    overflow:auto;
+    padding:12px 0 0;
+  }
+
+  .menu a{
+    white-space:nowrap;
+  }
+
+  .sideInfo{
+    display:none;
+  }
+
+  .content{
+    padding:22px 15px 45px;
+  }
+
+  .stats,
+  .quickGrid{
+    grid-template-columns:1fr;
+  }
+
+  .head{
+    align-items:flex-start;
+    flex-direction:column;
+  }
+
+  .content :global(.admin-row){
+    grid-template-columns:1fr;
+  }
+}
