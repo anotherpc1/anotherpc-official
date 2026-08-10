@@ -2297,3 +2297,206 @@ footer{
   .mobile-reserve{background:#1856d8;color:#fff}
   .mobile-phone{background:#0b1d39;color:#fff}
 }
+
+
+/* =========================================================
+   FINAL APPROVED UI PATCH
+   - Another PC AP logo
+   - BEST / NEW / HIT beside price
+   - clean Kakao yellow button
+   - product hover "톡톡" lift
+   ========================================================= */
+
+.header .brand{
+  display:flex !important;
+  align-items:center !important;
+  gap:12px !important;
+}
+
+.header .brand img{
+  width:58px !important;
+  height:58px !important;
+  object-fit:contain !important;
+  border-radius:0 !important;
+  background:#fff !important;
+}
+
+.header .brand>span{
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:flex-start !important;
+  justify-content:center !important;
+  line-height:1 !important;
+}
+
+.header .brand .brand-en{
+  font-size:25px !important;
+  font-weight:900 !important;
+  letter-spacing:-1.1px !important;
+  color:#101010 !important;
+  white-space:nowrap !important;
+}
+
+.header .brand small{
+  margin-top:6px !important;
+  color:#6b7280 !important;
+  font-size:11px !important;
+  font-weight:600 !important;
+}
+
+/* Product card: stable layout + subtle springy hover */
+.product-card{
+  transform:translateY(0) scale(1) !important;
+  transition:
+    transform .22s cubic-bezier(.2,.8,.2,1),
+    box-shadow .22s ease,
+    border-color .22s ease !important;
+  will-change:transform !important;
+}
+
+.product-card:hover{
+  transform:translateY(-10px) scale(1.018) !important;
+  box-shadow:0 24px 52px rgba(23,69,135,.20) !important;
+  border-color:#c8daf3 !important;
+}
+
+.product-card:active{
+  transform:translateY(-5px) scale(1.01) !important;
+}
+
+/* Badge moves beside price */
+.price{
+  text-align:center !important;
+}
+
+.price-line{
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  gap:8px !important;
+  min-height:48px !important;
+}
+
+.price-line strong{
+  margin:0 !important;
+}
+
+.price-badge{
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  min-width:42px !important;
+  height:26px !important;
+  padding:0 9px !important;
+  border-radius:6px !important;
+  color:#fff !important;
+  font-size:11px !important;
+  line-height:1 !important;
+  font-weight:900 !important;
+  letter-spacing:-.2px !important;
+  box-shadow:0 4px 10px rgba(0,0,0,.10) !important;
+}
+
+.price-badge.badge-best{ background:#ef4444 !important; }
+.price-badge.badge-new{ background:#2fa63a !important; }
+.price-badge.badge-hit{ background:#1d5fd1 !important; }
+
+/* Clean Kakao action — one TALK icon only */
+.card-actions{
+  display:grid !important;
+  grid-template-columns:1fr 1fr !important;
+  gap:8px !important;
+}
+
+.card-actions .kakao-card-btn{
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  gap:7px !important;
+  padding:11px 7px !important;
+  border:1px solid #f0ce00 !important;
+  border-radius:8px !important;
+  background:#fee500 !important;
+  color:#111 !important;
+  font-weight:900 !important;
+  box-shadow:0 4px 10px rgba(255,218,0,.18) !important;
+}
+
+.card-actions .kakao-card-btn:hover{
+  background:#ffdf00 !important;
+  border-color:#e9c800 !important;
+}
+
+.talk-icon{
+  width:23px !important;
+  height:23px !important;
+  flex:0 0 23px !important;
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  border-radius:50% !important;
+  background:#111 !important;
+  color:#fee500 !important;
+  font-size:6.5px !important;
+  font-weight:900 !important;
+  line-height:1 !important;
+  letter-spacing:-.6px !important;
+}
+
+/* remove any legacy pseudo TALK icon that caused duplicates */
+.kakao-card-btn::before,
+.card-actions .kakao-card-btn::before{
+  content:none !important;
+  display:none !important;
+}
+
+/* keyboard users */
+.product-card:focus-within{
+  transform:translateY(-8px) scale(1.012) !important;
+  box-shadow:0 22px 48px rgba(23,69,135,.18) !important;
+}
+
+/* mobile: hover transform disabled, tap feedback only */
+@media (max-width:760px){
+  .header .brand img{
+    width:48px !important;
+    height:48px !important;
+  }
+  .header .brand .brand-en{
+    font-size:20px !important;
+  }
+  .header .brand small{
+    font-size:9px !important;
+  }
+
+  .product-card:hover{
+    transform:none !important;
+  }
+  .product-card:active{
+    transform:translateY(-4px) scale(1.006) !important;
+  }
+
+  .price-line{
+    gap:6px !important;
+  }
+
+  .price-badge{
+    height:24px !important;
+    min-width:39px !important;
+    padding:0 7px !important;
+    font-size:10px !important;
+  }
+
+  .card-actions{
+    grid-template-columns:1fr 1fr !important;
+  }
+}
+
+@media (max-width:500px){
+  .header .brand>span{
+    display:flex !important;
+  }
+  .card-actions{
+    grid-template-columns:1fr 1fr !important;
+  }
+}

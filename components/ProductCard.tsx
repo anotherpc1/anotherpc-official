@@ -9,7 +9,6 @@ export default function ProductCard({ product, index }: { product: Product; inde
   return (
     <article className={`product-card accent-${accent}`} style={{ "--accent": accent === "green" ? "#16a34a" : accent === "orange" ? "#ff5a36" : accent === "slate" ? "#64748b" : "#1856d8" } as React.CSSProperties}>
       <span className="number">{String(index + 1).padStart(2, "0")}</span>
-      {product.badge && <span className="badge">{product.badge}</span>}
       <h3>{product.name}</h3>
       <span className="type">{product.type}</span>
       <div className={`stock ${stockClass}`}><i></i>{product.stock > 0 ? `예약가능 ${product.stock}대` : "현재 품절"}</div>
@@ -19,9 +18,18 @@ export default function ProductCard({ product, index }: { product: Product; inde
         <li>{product.storage}</li>
         <li>1PC · 1IP 개별 제공</li>
       </ul>
-      <div className="price"><small>월 요금</small><strong>{product.price.toLocaleString()}<em>원</em></strong></div>
+      <div className="price">
+        <small>월 요금</small>
+        <div className="price-line">
+          <strong>{product.price.toLocaleString()}<em>원</em></strong>
+          {product.badge && <span className={`price-badge badge-${product.badge.toLowerCase()}`}>{product.badge}</span>}
+        </div>
+      </div>
       <div className="card-actions">
-        <a href={kakao} target="_blank" rel="noopener noreferrer">카카오 문의</a>
+        <a className="kakao-card-btn" href={kakao} target="_blank" rel="noopener noreferrer">
+          <span className="talk-icon">TALK</span>
+          <span>카카오 문의</span>
+        </a>
         <ReservationButton productId={product.id} disabled={product.stock < 1} />
       </div>
     </article>

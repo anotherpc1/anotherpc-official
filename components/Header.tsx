@@ -12,8 +12,8 @@ export default function Header() {
   return (
     <header className="header">
       <Link className="brand" href="/" aria-label="어나더PC 홈">
-        <Image src="/assets/anotherpc-symbol.png" alt="어나더PC 심볼" width={62} height={62} priority />
-        <span><b>어나더<span className="brand-blue">PC</span></b><small>임대PC · 원격PC 전문</small></span>
+        <Image src="/assets/anotherpc-ap-symbol.png" alt="Another PC 로고" width={62} height={62} priority />
+        <span><b className="brand-en">Another PC</b><small>임대PC · 원격PC 전문</small></span>
       </Link>
 
       <button
