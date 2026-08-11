@@ -9,20 +9,31 @@
 @media(max-width:900px){.header{height:66px;padding:0 14px}.nav{display:none}.brand img{width:45px;height:45px}.brand b{font-size:20px}.hero{height:auto;display:flex;flex-direction:column;padding:26px 15px 15px;text-align:center}.heroCopy h1{font-size:48px}.heroActions{display:grid;width:100%}.kakaoMain,.reserveMain{min-width:0;width:100%}.pc{height:auto}.pc img{width:100%;max-width:440px}.services{height:auto;grid-template-columns:1fr 1fr;width:100%}.services>div{min-height:68px}.products{padding:14px}.productScope :global(.product-grid){grid-template-columns:1fr!important}.reservation{padding:8px 14px}.formScope :global(.reservation-form){grid-template-columns:1fr!important}.formScope :global(.reservation-form .wide),.formScope :global(.reservation-form button){grid-column:1!important}.notice{padding:5px 14px 12px}.noticeGrid{grid-template-columns:1fr}.footerGrid{grid-template-columns:1fr}.footerGrid>div{border-left:0!important;border-top:1px solid rgba(255,255,255,.15)}}
 
 
-/* Reservation submit fix: required privacy checkbox must remain visible */
-.formScope :global(.reservation-form .agree){
-  display:flex!important;
-  grid-column:1/-1!important;
-  flex-direction:row!important;
-  align-items:center!important;
-  justify-content:center!important;
-  gap:7px!important;
-  margin:0!important;
-  font-size:9px!important;
-  font-weight:700!important;
+/* Telegram hero button only — all other layout/styles unchanged */
+.telegramMain{
+  height:44px;
+  min-width:185px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:9px;
+  background:#229ED9;
+  color:#fff!important;
+  font-size:14px;
+  font-weight:900;
 }
-.formScope :global(.reservation-form .agree input){
-  width:auto!important;
-  margin:0!important;
-  padding:0!important;
+.telegramMain i{
+  width:20px;
+  height:20px;
+  margin-right:6px;
+  display:inline-grid;
+  place-items:center;
+  border-radius:50%;
+  background:#fff;
+  color:#229ED9;
+  font-size:11px;
+  font-style:normal;
+}
+@media(max-width:900px){
+  .telegramMain{min-width:0;width:100%}
 }

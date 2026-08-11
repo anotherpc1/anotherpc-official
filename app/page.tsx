@@ -55,6 +55,9 @@ export default async function Home() {
               <a className={styles.kakaoMain} href={kakao} target="_blank" rel="noopener noreferrer">
                 <i>TALK</i> 카카오톡 문의
               </a>
+              <a className={styles.telegramMain} href={telegram} target="_blank" rel="noopener noreferrer">
+                <i>✈</i> 텔레그램 문의
+              </a>
               <a className={styles.reserveMain} href="#reservation">▣ &nbsp; 예약 신청하기</a>
             </div>
           </div>
