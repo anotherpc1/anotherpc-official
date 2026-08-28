@@ -5,7 +5,7 @@ import { useState } from "react";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
-  const kakao = process.env.NEXT_PUBLIC_KAKAO_URL || "https://open.kakao.com/o/s6LStvBh";
+  const kakao = process.env.NEXT_PUBLIC_KAKAO_URL || "https://pf.kakao.com/_xfxfMxaX/friend";
   const phone = process.env.NEXT_PUBLIC_PHONE || "010-5955-0993";
   return <header className="final-header">
     <Link className="final-brand" href="/">

@@ -16,7 +16,7 @@ export default async function Home() {
     .order("sort_order");
 
   const products = (data || []) as Product[];
-  const kakao = process.env.NEXT_PUBLIC_KAKAO_URL || "https://open.kakao.com/o/s6LStvBh";
+  const kakao = process.env.NEXT_PUBLIC_KAKAO_URL || "https://pf.kakao.com/_xfxfMxaX/friend";
   const notice = process.env.NEXT_PUBLIC_NOTICE_URL || "https://open.kakao.com/o/gHRG6Tvg";
   const phone = process.env.NEXT_PUBLIC_PHONE || "010-5955-0993";
   const telegram = process.env.NEXT_PUBLIC_TELEGRAM_URL || "https://t.me/bio0318";

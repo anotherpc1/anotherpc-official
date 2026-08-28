@@ -2,7 +2,7 @@ import type { Product } from "@/lib/types";
 import ReservationButton from "./ReservationButton";
 
 export default function ProductCard({ product, index }: { product: Product; index: number }) {
-  const kakao = process.env.NEXT_PUBLIC_KAKAO_URL || "https://open.kakao.com/o/s6LStvBh";
+  const kakao = process.env.NEXT_PUBLIC_KAKAO_URL || "https://pf.kakao.com/_xfxfMxaX/friend";
   const accent = product.accent === "green" ? "#16a34a" : product.accent === "orange" ? "#ff4a21" : product.accent === "slate" ? "#64748b" : "#155bd7";
 
   return <article className="final-card" style={{"--card-accent":accent} as React.CSSProperties}>

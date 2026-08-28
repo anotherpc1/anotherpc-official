@@ -2,7 +2,7 @@ import Image from "next/image";
 import styles from "@/app/approved-home.module.css";
 
 export default function Footer() {
-  const kakao = process.env.NEXT_PUBLIC_KAKAO_URL || "https://open.kakao.com/o/s6LStvBh";
+  const kakao = process.env.NEXT_PUBLIC_KAKAO_URL || "https://pf.kakao.com/_xfxfMxaX/friend";
   const notice = process.env.NEXT_PUBLIC_NOTICE_URL || "https://open.kakao.com/o/gHRG6Tvg";
   const telegram = process.env.NEXT_PUBLIC_TELEGRAM_URL || "https://t.me/bio0318";
 
