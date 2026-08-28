@@ -65,7 +65,7 @@ export default function ReservationForm({ products }: { products: Product[] }) {
 
         <label>
           상품
-          <select name="product_id" required defaultValue="">
+          <select id="product_id" name="product_id" required defaultValue="">
             <option value="" disabled>
               상품을 선택해주세요.
             </option>
