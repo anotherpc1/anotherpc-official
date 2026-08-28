@@ -29,6 +29,7 @@ export async function POST(request: Request) {
     }
 
     const today = new Date().toISOString().slice(0, 10);
+    const memo = String(body.request || body.memo || "").slice(0, 500);
 
     const { error } = await supabase.from("reservations").insert({
       name: String(body.name).slice(0, 30),
@@ -37,13 +38,48 @@ export async function POST(request: Request) {
       product_name: product.name,
       quantity,
       start_date: today,
-      memo: String(body.request || body.memo || "").slice(0, 500),
+      memo,
     });
 
     if (error) throw error;
 
+    const telegramToken = process.env.TELEGRAM_BOT_TOKEN;
+    const telegramChatId = process.env.TELEGRAM_CHAT_ID;
+
+    if (telegramToken && telegramChatId) {
+      const text = [
+        "🔔 어나더PC 신규 예약",
+        "",
+        `성함: ${String(body.name)}`,
+        `연락처: ${String(body.contact)}`,
+        `상품: ${product.name}`,
+        `수량: ${quantity}대`,
+        `요청사항: ${memo || "없음"}`,
+      ].join("\n");
+
+      try {
+        await fetch(
+          `https://api.telegram.org/bot${telegramToken}/sendMessage`,
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              chat_id: telegramChatId,
+              text,
+            }),
+          }
+        );
+      } catch (telegramError) {
+        console.error("Telegram notification failed:", telegramError);
+      }
+    }
+
     return NextResponse.json({ ok: true });
-  } catch {
+  } catch (error) {
+    console.error("Reservation error:", error);
+
     return NextResponse.json(
       { error: "예약 접수 중 오류가 발생했습니다." },
       { status: 500 }
