@@ -1,5 +1,4 @@
 import type { Product } from "@/lib/types";
-import ReservationButton from "./ReservationButton";
 
 export default function ProductCard({ product, index }: { product: Product; index: number }) {
   const kakao = process.env.NEXT_PUBLIC_KAKAO_URL || "https://pf.kakao.com/_xfxfMxaX/friend";
@@ -26,11 +25,11 @@ export default function ProductCard({ product, index }: { product: Product; inde
       </div>
     </div>
 
-    <div className="final-actions">
-      <a href={kakao} target="_blank" rel="noreferrer">
-        <i>TALK</i> 카카오톡 문의
-      </a>
-      <ReservationButton productId={product.id} disabled={product.stock<1}/>
-    </div>
+<div className="final-actions">
+  <a href={kakao} target="_blank" rel="noreferrer">
+    <i>TALK</i> 카카오톡 문의
+  </a>
+</div>
+
   </article>;
 }

@@ -1,6 +1,5 @@
 import Image from "next/image";
 import ProductCard from "@/components/ProductCard";
-import ReservationForm from "@/components/ReservationForm";
 import { createClient } from "@/lib/supabase/server";
 import type { Product } from "@/lib/types";
 import styles from "./home-exact.module.css";
@@ -35,8 +34,7 @@ export default async function Home() {
         <nav className={styles.nav}>
           <a href="#products">상품안내</a>
           <a href="#notice">전체 공지방</a>
-          <a href="#reservation">예약 신청</a>
-          <a className={styles.topKakao} href={kakao} target="_blank" rel="noopener noreferrer">
+            <a className={styles.topKakao} href={kakao} target="_blank" rel="noopener noreferrer">
             <i>TALK</i> 카카오톡 문의
           </a>
           <a className={styles.topPhone} href={`tel:${phone}`}>☎ &nbsp; 전화문의 08:30~23:00</a>
@@ -58,7 +56,7 @@ export default async function Home() {
               <a className={styles.telegramMain} href={telegram} target="_blank" rel="noopener noreferrer">
                 <i>✈</i> 텔레그램 문의
               </a>
-              <a className={styles.reserveMain} href="#reservation">▣ &nbsp; 예약 신청하기</a>
+              
             </div>
           </div>
 
@@ -92,17 +90,7 @@ export default async function Home() {
           </div>
         </section>
 
-        <section id="reservation" className={styles.reservation}>
-          <div className={styles.title}>
-            <h2>예약 신청</h2>
-            <p>아래 정보를 입력해주시면 빠르게 확인 후 안내드리겠습니다.</p>
-          </div>
-          <div className={styles.formScope}>
-            <ReservationForm products={products} />
-          </div>
-        </section>
-
-        <section id="notice" className={styles.notice}>
+          <section id="notice" className={styles.notice}>
           <div className={styles.titleLine}>
             <span></span>
             <div>
@@ -139,7 +127,6 @@ export default async function Home() {
           <div>
             <b>바로가기</b>
             <p><a href="#products">상품안내</a></p>
-            <p><a href="#reservation">예약 신청</a></p>
             <p><a href={notice}>전체 공지방</a></p>
           </div>
 
